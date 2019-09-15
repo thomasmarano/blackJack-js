@@ -4,6 +4,10 @@ describe('Deck', function(){
 
     var deck = new Deck();
 
+    beforeEach(function(){
+        deck.reset();
+    });
+
 
     describe('Initialization Tests', function(){
         it('starts with 52 cards', function(){
@@ -17,6 +21,19 @@ describe('Deck', function(){
             expect(deck.deal()).toEqual(firstCard);
             expect(deck.cards.length).toEqual(51)
         });
+
+        it('resets the deck after a game', function(){
+            deck.deal();
+            expect(deck.cards.length).toEqual(51);
+            deck.reset();
+            expect(deck.cards.length).toEqual(52)
+        });
+
+        // it('shuffles the deck', function(){
+        //
+        // })
     });
+
+
 
 });
