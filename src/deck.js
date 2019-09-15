@@ -17,4 +17,10 @@ Deck.prototype.deal = function(){
   return this.cards.shift();
 };
 
+Deck.prototype.reset = function(){
+    var newDeck = new Deck();
+    // console.log(newDeck.cards);
+    this.cards = newDeck.cards
+};
+
 module.exports = Deck;
