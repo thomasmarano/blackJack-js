@@ -1,4 +1,4 @@
-'use strict';
+var Game = require('../src/game');
 
 describe('Game', function(){
 
