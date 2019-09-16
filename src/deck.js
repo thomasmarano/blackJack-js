@@ -19,8 +19,12 @@ Deck.prototype.deal = function(){
 
 Deck.prototype.reset = function(){
     var newDeck = new Deck();
-    // console.log(newDeck.cards);
     this.cards = newDeck.cards
+};
+
+Deck.prototype.cut = function() {
+    var firstHalf = this.cards.splice(0, 26);
+    this.cards = this.cards.concat(firstHalf);
 };
 
 module.exports = Deck;
