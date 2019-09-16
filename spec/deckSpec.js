@@ -29,9 +29,11 @@ describe('Deck', function(){
         });
 
         it('cuts the deck', function(){
-            var middleCard = deck.cards[26];
+            var cardAt26 = deck.cards[25];
+            var cardAt27 = deck.cards[26];
             deck.cut();
-            expect(deck.cards[0]).toEqual(middleCard)
+            expect(deck.cards[51]).toEqual(cardAt26);
+            expect(deck.cards[0]).toEqual(cardAt27);
         });
 
         // it('shuffles the deck', function(){
