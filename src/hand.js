@@ -1,8 +1,8 @@
 'use strict';
 
-function Game(){
+function Hand(){
     this.score = 0;
 }
 
 
-module.exports = Game;
+module.exports = Hand;
