@@ -2,6 +2,7 @@
 
 function Hand(){
     this.score = 0;
+    this.currCards = [];
 }
 
 
