@@ -8,7 +8,6 @@ describe('Deck', function(){
         deck.reset();
     });
 
-
     describe('Initialization Tests', function(){
         it('starts with 52 cards', function(){
             expect(deck.cards.length).toEqual(52);
@@ -29,11 +28,15 @@ describe('Deck', function(){
             expect(deck.cards.length).toEqual(52)
         });
 
+        it('cuts the deck', function(){
+            var middleCard = deck.cards[26];
+            deck.cut();
+            expect(deck.cards[0]).toEqual(middleCard)
+        });
+
         // it('shuffles the deck', function(){
-        //
-        // })
+        // Need to figure out how to test for random
+        // });
     });
-
-
 
 });
