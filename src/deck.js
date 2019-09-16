@@ -27,4 +27,17 @@ Deck.prototype.cut = function() {
     this.cards = this.cards.concat(firstHalf);
 };
 
+Deck.prototype.shuffle = function() {
+    var deckLength = this.cards.length;
+
+    while (deckLength > 1) {
+        var randIndex = Math.floor(Math.random() * deckLength);
+        var randCard = this.cards[randIndex];
+        var lastCard = this.cards[deckLength - 1];
+        this.cards.splice(randIndex, 1, lastCard);
+        this.cards.splice(deckLength - 1, 1, randCard);
+        deckLength--
+    }
+};
+
 module.exports = Deck;
