@@ -38,6 +38,7 @@ Deck.prototype.shuffle = function() {
         this.cards.splice(deckLength - 1, 1, randCard);
         deckLength--
     }
+    return this.cards;
 };
 
 module.exports = Deck;
