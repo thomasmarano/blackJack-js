@@ -36,9 +36,14 @@ describe('Deck', function(){
             expect(deck.cards[0]).toEqual(cardAt27);
         });
 
-        // it('shuffles the deck', function(){
-        // Need to figure out how to test for random
-        // });
+        it('shuffles the deck', function(){
+           var originalDeck = [];
+           originalDeck = originalDeck.concat(deck.cards);
+           deck.shuffle();
+           var matches = originalDeck.filter(function(val, ind){
+              return val === deck.cards[ind];
+           });
+           expect(matches.length).toBeLessThan(52)
+        });
     });
-
 });
