@@ -12,10 +12,25 @@ describe('Hand', function(){
            expect(hand.currCards).toEqual([])
         });
 
+        it('gives you two cards when you start game', function(){
+            var emptyHand = hand.currCards.length;
+            hand.startGame();
+            expect(hand.currCards.length).toBeGreaterThan(emptyHand);
+            expect(hand.currCards.length).toEqual(2)
+        });
     });
 
-    describe('Start Game', function(){
+    describe('Game Logic', function(){
+
+        beforeEach(function(){
+           hand.startGame();
+        });
 
 
+        // it('gives you a card when you hit', function(){
+        //
+        //     hand.hit();
+        //
+        // });
     });
 });
