@@ -16,7 +16,11 @@ describe('Score Calculator', function(){
     it('correctly calculates the value of 2+ non-face cards', function(){
         expect(scorer.calculate([[ 'Clubs', 9 ], [ 'Spades', 6 ], [ 'Spades', 4 ], [ 'Spades', 7 ]])).toEqual(26);
         expect(scorer.calculate([[ 'Clubs', 5 ], [ 'Diamonds', 8 ], [ 'Hearts', 3 ]])).toEqual(16);
+    });
 
+    it('correctly calculates the value of 2 cards including face cards', function(){
+        expect(scorer.calculate([[ 'Clubs', 'Queen' ], [ 'Spades', 'King' ]])).toEqual(20);
+        expect(scorer.calculate([[ 'Clubs', 'Jack' ], [ 'Diamonds', 9 ]])).toEqual(19);
     })
 
 });
