@@ -9,12 +9,16 @@ function Hand(deck){
 
 Hand.prototype.startGame = function(){
     for (var x = 0; x < 2; x++) {
-        this.currCards.push(this.deck.deal());
+        this.dealCard();
     }
 };
 
 Hand.prototype.hit = function(){
-    this.currCards.push(this.deck.deal())
+    this.dealCard()
+};
+
+Hand.prototype.dealCard = function(){
+    this.currCards.push(this.deck.deal());
 };
 
 module.exports = Hand;
