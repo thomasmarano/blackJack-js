@@ -13,4 +13,8 @@ Hand.prototype.startGame = function(){
     }
 };
 
+Hand.prototype.hit = function(){
+    this.currCards.push(this.deck.deal())
+};
+
 module.exports = Hand;
