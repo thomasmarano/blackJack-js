@@ -11,8 +11,6 @@ Hand.prototype.startGame = function(){
     for (var x = 0; x < 2; x++) {
         this.currCards.push(this.deck.deal());
     }
-    // console.log(this.currCards)
 };
-
 
 module.exports = Hand;
