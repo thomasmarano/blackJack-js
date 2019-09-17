@@ -12,7 +12,7 @@ describe('Feature Tests', function(){
    });
 
    describe('New Game Starts', function(){
-       it('hand receives two cards', function(){
+       it('hand receives two cards from deck', function(){
            hand.startGame();
            expect(hand.currCards.length).toEqual(2);
            expect(deck._suits.includes(hand.currCards[0][0])).toBeTruthy();
