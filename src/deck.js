@@ -2,7 +2,6 @@
 
 function Deck() {
     this.cards = [];
-
     this._suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
     this._values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 
@@ -29,7 +28,6 @@ Deck.prototype.cut = function() {
 
 Deck.prototype.shuffle = function() {
     var deckLength = this.cards.length;
-
     while (deckLength > 1) {
         var randIndex = Math.floor(Math.random() * deckLength);
         var randCard = this.cards[randIndex];

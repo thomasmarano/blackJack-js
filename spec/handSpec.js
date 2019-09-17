@@ -16,8 +16,6 @@ describe('Hand', function(){
         it('starts with empty hand', function(){
            expect(hand.currCards).toEqual([])
         });
-
-
     });
 
     describe('game logic', function(){
@@ -41,4 +39,5 @@ describe('Hand', function(){
             expect(deck.deal).toHaveBeenCalled()
         });
     });
+
 });

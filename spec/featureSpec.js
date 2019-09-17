@@ -2,15 +2,17 @@ var Hand = require('../src/hand');
 var Deck = require('../src/deck');
 
 describe('Feature Tests', function(){
-   var deck = new Deck();
-   var hand = new Hand(deck);
+    var deck;
+    var hand;
 
    beforeEach(function(){
-      deck.reset();
+      deck = new Deck();
+      hand = new Hand(deck);
       deck.shuffle();
+
    });
 
-   describe('Game Logic', function(){
+   describe('game logic', function(){
        it('hand receives two cards from deck when game starts', function(){
            hand.startGame();
            expect(hand.currCards.length).toEqual(2);
@@ -22,13 +24,12 @@ describe('Feature Tests', function(){
        });
 
        it('deals 1 card from deck when person chooses hit', function(){
-          hand.startGame();
           hand.hit();
-          expect(hand.currCards.length).toEqual(3);
-          expect(deck.cards.length).toEqual(49);
-          expect(deck._suits.includes(hand.currCards[2][0])).toBeTruthy();
-          expect(deck._values.includes(hand.currCards[2][1])).toBeTruthy();
-
+          expect(hand.currCards.length).toEqual(1);
+          expect(deck.cards.length).toEqual(51);
+          expect(deck._suits.includes(hand.currCards[0][0])).toBeTruthy();
+          expect(deck._values.includes(hand.currCards[0][1])).toBeTruthy();
        });
    });
+
 });

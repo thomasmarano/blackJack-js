@@ -2,10 +2,10 @@ var Deck = require('../src/deck');
 
 describe('Deck', function(){
 
-    var deck = new Deck();
+    var deck;
 
     beforeEach(function(){
-        deck.reset();
+        deck = new Deck();
     });
 
     describe('Initialization Tests', function(){

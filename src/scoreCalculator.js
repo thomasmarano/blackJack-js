@@ -5,10 +5,21 @@ function ScoreCalculator(){
 }
 
 ScoreCalculator.prototype.calculate = function(cards){
-    return cards.reduce(function(sum, each){
-        return sum + each[1]
+   var myThis = this;
+   return cards.reduce(function(sum, each){
+        return sum + myThis.faceCardCheck([each[1]])
         }, 0);
 };
 
-module.exports = ScoreCalculator;
 
+
+ScoreCalculator.prototype.faceCardCheck = function(card){
+    if (typeof card[0] === 'number') {
+      return card[0]
+  } else {
+      return 10;
+    }
+};
+
+
+module.exports = ScoreCalculator;
