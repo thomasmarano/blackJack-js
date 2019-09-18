@@ -2,11 +2,13 @@ var Hand = require('../src/hand');
 
 describe('Hand', function(){
     var deck;
+    var calculator;
     var hand;
 
     beforeEach(function(){
         deck = jasmine.createSpyObj('deckSpy', ['deal']);
-        hand = new Hand(deck);
+        calculator = jasmine.createSpyObj('calculator', ['calculate']);
+        hand = new Hand(deck, calculator);
     });
 
     describe('initialization tests', function(){
@@ -37,6 +39,11 @@ describe('Hand', function(){
             hand.hit();
             expect(hand.currCards.length).toEqual(1);
             expect(deck.deal).toHaveBeenCalled()
+        });
+
+        it('calculates the score', function(){
+            hand.updateScore();
+            expect(calculator.calculate).toHaveBeenCalledWith(hand.currCards);
         });
     });
 
