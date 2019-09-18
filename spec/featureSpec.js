@@ -32,10 +32,11 @@ describe('Feature Tests', function(){
           expect(deck._values.includes(hand.currCards[0][1])).toBeTruthy();
        });
 
-       it('deals 2 cards from unshuffled deck & correctly calculates score', function(){
+       it('deals 3 cards from unshuffled deck & correctly calculates score', function(){
            hand.startGame();
+           hand.hit();
            hand.updateScore();
-           expect(hand.score).toEqual(12)
+           expect(hand.score).toEqual(15)
        });
    });
 });
