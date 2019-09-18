@@ -8,12 +8,12 @@ describe('Feature Tests', function(){
    beforeEach(function(){
       deck = new Deck();
       hand = new Hand(deck);
-      deck.shuffle();
 
    });
 
    describe('game logic', function(){
        it('hand receives two cards from deck when game starts', function(){
+           deck.shuffle();
            hand.startGame();
            expect(hand.currCards.length).toEqual(2);
            expect(deck.cards.length).toEqual(50);
@@ -24,12 +24,18 @@ describe('Feature Tests', function(){
        });
 
        it('deals 1 card from deck when person chooses hit', function(){
+          deck.shuffle();
           hand.hit();
           expect(hand.currCards.length).toEqual(1);
           expect(deck.cards.length).toEqual(51);
           expect(deck._suits.includes(hand.currCards[0][0])).toBeTruthy();
           expect(deck._values.includes(hand.currCards[0][1])).toBeTruthy();
        });
-   });
 
+       it('deals 2 cards from unshuffled deck & correctly calculates score', function(){
+           hand.startGame();
+           hand.updateScore();
+           expect(hand.score).toEqual(12)
+       });
+   });
 });
