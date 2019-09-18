@@ -21,6 +21,10 @@ describe('Score Calculator', function(){
     it('correctly calculates the value of 2 cards including face cards', function(){
         expect(scorer.calculate([[ 'Clubs', 'Queen' ], [ 'Spades', 'King' ]])).toEqual(20);
         expect(scorer.calculate([[ 'Clubs', 'Jack' ], [ 'Diamonds', 9 ]])).toEqual(19);
-    })
+    });
 
+    it('correct calculates the value of 2+ cards w face cards', function(){
+        expect(scorer.calculate([[ 'Clubs', 'Queen' ], ['Spades', 8], [ 'Spades', 'King' ]])).toEqual(28);
+        expect(scorer.calculate([[ 'Clubs', 'Queen' ], ['Spades', 3], [ 'Spades', 'King' ]])).toEqual(23);
+    });
 });
